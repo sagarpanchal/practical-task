@@ -1,0 +1,23 @@
+{
+  "name": "prectical-task",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "xlsx": "^0.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dynamicPattern": "node ./dynamicPattern.js",
+    "xlsxToJson": "node ./xlsxToJson.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagarpanchal/practical-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sagarpanchal/practical-task/issues"
+  },
+  "homepage": "https://github.com/sagarpanchal/practical-task#readme"
+}
