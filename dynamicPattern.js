@@ -26,6 +26,7 @@ const writePattern = (callBack = () => "*", options = {}) => {
   const padNewlines = "\n".repeat(pad / 6);
 
   let n = 0;
+  let lastN = 0;
 
   for (let x = 1; x <= max; x++) {
     void (
@@ -39,12 +40,14 @@ const writePattern = (callBack = () => "*", options = {}) => {
     for (let y = 1; y <= x; y++) {
       const value = callBack([x, y], n++);
       process.stdout.write(value + " ".repeat(pad - value.length));
+      if (max === x) lastN++;
     }
 
     process.stdout.write(padNewlines);
   }
 
   if (!full) return;
+  n = n - (lastN + 1);
 
   for (let x = max - 1; x >= 1; x--) {
     void (
@@ -56,7 +59,7 @@ const writePattern = (callBack = () => "*", options = {}) => {
       process.stdout.write(" ".repeat(pad));
 
     for (let y = 1; y <= x; y++) {
-      const value = callBack([x, y], n++);
+      const value = callBack([x, y], n--);
       process.stdout.write(value + " ".repeat(pad - value.length));
     }
 
@@ -65,7 +68,7 @@ const writePattern = (callBack = () => "*", options = {}) => {
 };
 
 writePattern(([x, y], n) => `${String.fromCharCode(97 + n)}${x}`, {
-  max: process.argv[2] || 5,
-  pad: process.argv[3] || 12,
-  full: process.argv[4] === "full",
+  max: parseInt(process.argv[2], 10) || 5,
+  pad: parseInt(process.argv[3], 10) || 12,
+  full: `${process.argv[4]}` === "full",
 });
