@@ -7,10 +7,10 @@
 
 /**
  * Write triangle pattern to console
- * @param {*} callBack     return strign to print on console
- * @param {*} options.max  max number of iterations (rows) [(n*2)-1 when full is true]
- * @param {*} options.pad  max characters to pad
- * @param {*} options.full full rectangle pattern
+ * @param {string} callBack     return string to print on console
+ * @param {number} options.max  max number of iterations (rows) [(n*2)-1 when full is true]
+ * @param {number} options.pad  max characters to pad
+ * @param {boolean} options.full full rectangle pattern
  */
 const writePattern = (callBack = () => "*", options = {}) => {
   let { max, pad, full } = { max: 5, pad: 12, full: true, ...options };
