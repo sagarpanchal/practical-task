@@ -1,7 +1,7 @@
 /**
  * Converts sample.xlsx into json
  *
- * Command to run this script  `node .\xlsxToJson.js`
+ * Command to run this script - `node .\xlsxToJson.js`
  * Running this file will convert `data/sample.xlsx` into JSON array
  * Output will be in `data/sample.json` file
  */
